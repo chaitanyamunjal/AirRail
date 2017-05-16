@@ -10,54 +10,104 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-  
-   <servlet>
-  <servlet-name>JAVA WS</servlet-name>
-  <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-  
-  <init-param>
-  		<param-name>jersey.config.server.provider.packages</param-name>
-  		<param-value>com.airRail.Sample</param-value>
-  </init-param>
-  
-  <load-on-startup>1</load-on-startup>
+  <servlet>
+    <servlet-name>JAVA WS</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>com.airRail</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
-  
-  
   <servlet-mapping>
-  <servlet-name>JAVA WS</servlet-name>
-  <url-pattern>/api/</url-pattern>
+    <servlet-name>JAVA WS</servlet-name>
+    <url-pattern>/api/*</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>com.airRail.LoginServlet</servlet-class>
+    <servlet-class>com.airRail.Controller.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>HomeServlet</servlet-name>
-    <servlet-class>com.airRail.HomeServlet</servlet-class>
+    <servlet-class>com.airRail.Controller.HomeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>HomeServlet</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>Logout</servlet-name>
-    <servlet-class>com.airRail.Logout</servlet-class>
+    <servlet-class>com.airRail.Controller.Logout</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SignupServlet</servlet-name>
+    <servlet-class>com.airRail.Controller.SignupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignupServlet</servlet-name>
+    <url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ContactServlet</servlet-name>
+    <servlet-class>com.airRail.Controller.ContactServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContactServlet</servlet-name>
+    <url-pattern>/contact</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AccountServlet</servlet-name>
+    <servlet-class>com.airRail.Controller.AccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccountServlet</servlet-name>
+    <url-pattern>/account</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>EditServlet</servlet-name>
+    <servlet-class>com.airRail.Controller.EditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditServlet</servlet-name>
+    <url-pattern>/edit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>MainServlet</servlet-name>
+    <servlet-class>com.airRail.Controller.MainServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MainServlet</servlet-name>
+    <url-pattern>/main</url-pattern>
+  </servlet-mapping>
+  
   <filter>
     <filter-name>myfilter</filter-name>
-    <filter-class>com.airRail.myfilter</filter-class>
+    <filter-class>com.airRail.Controller.myfilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>myfilter</filter-name>
     <url-pattern>/home</url-pattern>
+    <url-pattern>/contact</url-pattern>
+    <url-pattern>/account</url-pattern>
+    <url-pattern>/main</url-pattern>
+	<url-pattern>/edit</url-pattern>
+    <url-pattern>/logout</url-pattern>
   </filter-mapping>
+
 </web-app>
